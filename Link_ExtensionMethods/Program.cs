@@ -26,11 +26,29 @@ internal class Program
         patients.Add(new Patient { Firstname = "Gerti", Lastname = "Lehner", Age = 55, Costs = 2941 });
         patients.Add(new Patient { Firstname = "Pauli", Lastname = "Huber", Age = 44, Costs = 1471 });
 
-
-       Console.WriteLine(integers.Count());
+        Console.WriteLine("Integers: -> Count,Max,Min,Sum,Average");
+        Console.WriteLine(integers.Count());
         Console.WriteLine(integers.Max());
         Console.WriteLine(integers.Min());
         Console.WriteLine(integers.Sum());
         Console.WriteLine(integers.Average());
+        Console.WriteLine("Doubles: -> Count,Max,Min,Sum,Average");
+        Console.WriteLine(doubles.Count());
+        Console.WriteLine(doubles.Max());
+        Console.WriteLine(doubles.Min());
+        Console.WriteLine(doubles.Sum());
+        Console.WriteLine(doubles.Average());
+        Console.WriteLine("Predicate - Test -> > als 70");
+        List<int> NumbersGR70 = integers.Where(x => x > 70);
+        foreach (int number in NumbersGR70)
+        {
+            Console.WriteLine(number);
+        }
+        Console.WriteLine("Predicate - Test Patienten-> > als 50");
+        List<Patient> PatientenGR50 = patients.Where(x => x.Age > 50);
+        foreach (Patient patient in PatientenGR50)
+        {
+            Console.WriteLine(patient);
+        }
     }
 }
